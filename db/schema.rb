@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20170216202014) do
 
   create_table "circus", force: :cascade do |t|
     t.string   "location"
-    t.string   "starts_on"
-    t.string   "ends_on"
+    t.date     "starts_on"
+    t.date     "ends_on"
     t.integer  "num_of_tix"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170216202014) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "car_id"
+    t.integer  "circus_id"
   end
 
 end

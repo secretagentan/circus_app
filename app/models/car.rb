@@ -16,15 +16,17 @@ class Car < ApplicationRecord
 
   # validate make and model can't be blank
   validates :make, :model, presence: true
+  # validates(:make, :model, {presence: true})
+  has_many :clowns
 
   # define a vroom method that returns "vroom vroom"
   def vroom
-    if jalopy?
-      "putter"
-    else
-      "vroom vroom"
-    end
-    # jalopy? ? "putter" : "vroom vroom"
+    jalopy? ? "putter" : "vroom vroom"
+    # if jalopy?
+    #   "putter"
+    # else
+    #   "vroom vroom"
+    # end
   end
 
   # define a jalopy? method that returns true if more than 8 years
