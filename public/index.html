@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>The Circus Comes to Town</title>
+  <link rel="stylesheet" href="/style.css">
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -11,7 +12,7 @@
 <body>
   <h1>🐘🎪🐘</h1>
 
-  <button id="circus-btn">View</button>
+  <button id="circus-btn">View Events</button>
 
   <div class="circuses">
   <!-- render circuses here -->
@@ -23,35 +24,6 @@
   </ul> -->
 
   </div>
-
-  <script>
-    var $circusBtn = $('#circus-btn');
-
-    $circusBtn.on('click', function(evt) {
-      $.get('/circus', function(res) {
-        var html = "<ul>";
-        console.log(res);
-        res.forEach(function(circus) {
-          html += "<li id='" + circus.id + "'>Circus #" + circus.id +
-          "</li><li>Location: " + circus.location +
-          "</li><li>Starts On: " + circus.starts_on +
-          "</li><li>Ends On: " + circus.ends_on +
-          "</li><li>Tickets Avail: " + circus.num_of_tix + "</li><br><br>";
-          console.log(circus.id)
-          console.log(circus.location)
-        })
-        html += "</ul>"
-        $('.circuses').append(html);
-      })
-    })
-
-
-
-
-
-
-
-  </script>
-  <!-- <script src="/main.js"></script> -->
+  <script src="/main.js"></script>
 </body>
 </html>
