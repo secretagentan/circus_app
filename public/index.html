@@ -32,7 +32,11 @@
         var html = "<ul>";
         console.log(res);
         res.forEach(function(circus) {
-          html += "<li id='" + circus.id + "'>Location: " + circus.location + "</li>";
+          html += "<li id='" + circus.id + "'>Circus #" + circus.id +
+          "</li><li>Location: " + circus.location +
+          "</li><li>Starts On: " + circus.starts_on +
+          "</li><li>Ends On: " + circus.ends_on +
+          "</li><li>Tickets Avail: " + circus.num_of_tix + "</li><br><br>";
           console.log(circus.id)
           console.log(circus.location)
         })
